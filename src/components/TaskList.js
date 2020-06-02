@@ -8,33 +8,41 @@ export const TaskList = () => {
   const [tasks, setTasks] = useState([
     {
       id: 1,
-      title: "fwlefjeio",
-      content: "blaogf",
+      title: "Làm nốt cái projects này đi",
+      content: "K làm khác biết",
     },
     {
       id: 2,
-      title: "fwlefjeio",
-      content: "blaogf",
+      title: "Đùa tí thôi mà",
+      content: "Làm gì căng",
     },
   ]);
+  const [taskEdit, setTaskEdit] = useState(null);
 
   const onCreateTodo = (todo) => {
     setTasks([...tasks, todo]);
   };
 
   const onDeleteTodo = (todoId) => {
-    setTasks(tasks.filter(({ id }) => id !== todoId));
+    setTasks(tasks.filter(task => task.id !== todoId));
   };
 
-  const onEditTodo = (todoId) => {
-    console.log("fefe");
+  const findIndex = (todoId) => {
+    setTaskEdit(tasks.find(task => task.id === todoId));
   };
 
+  const onEdit = (data) => {
+    setTasks(tasks.map(task => task.id === data.id ? data : task));
+  }
   return (
     <Wrapper>
       <ActionBar
         isAddNew={isAddNew}
         onCreateTodo={onCreateTodo}
+        setIsAddNew={setIsAddNew}
+        taskEdit = {taskEdit}
+        setTaskEdit = {setTaskEdit}
+        onEdit = {onEdit}
         length={tasks.length > 0 ? tasks[tasks.length - 1].id : 0}
       />
       {tasks.map(({ id, title, content }) => (
@@ -45,7 +53,7 @@ export const TaskList = () => {
           title={title}
           content={content}
           onDeleteTodo={onDeleteTodo}
-          onEditTodo={onEditTodo}
+          findIndex={findIndex}
         />
       ))}
     </Wrapper>
