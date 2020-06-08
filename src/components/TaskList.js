@@ -24,25 +24,32 @@ export const TaskList = () => {
   };
 
   const onDeleteTodo = (todoId) => {
-    setTasks(tasks.filter(task => task.id !== todoId));
+    setTasks(tasks.filter((task) => task.id !== todoId));
   };
 
   const findIndex = (todoId) => {
-    setTaskEdit(tasks.find(task => task.id === todoId));
+    setTaskEdit(tasks.find((task) => task.id === todoId));
   };
 
   const onEdit = (data) => {
-    setTasks(tasks.map(task => task.id === data.id ? data : task));
-  }
+    setTasks(tasks.map((task) => (task.id === data.id ? data : task)));
+  };
+
+  const onSearchTodo = (value) => {
+    setTasks(
+      tasks.filter(({ title }) => title.toLowerCase().indexOf(value) > -1)
+    );
+  };
   return (
     <Wrapper>
       <ActionBar
         isAddNew={isAddNew}
+        onSearchTodo={onSearchTodo}
         onCreateTodo={onCreateTodo}
         setIsAddNew={setIsAddNew}
-        taskEdit = {taskEdit}
-        setTaskEdit = {setTaskEdit}
-        onEdit = {onEdit}
+        taskEdit={taskEdit}
+        setTaskEdit={setTaskEdit}
+        onEdit={onEdit}
         length={tasks.length > 0 ? tasks[tasks.length - 1].id : 0}
       />
       {tasks.map(({ id, title, content }) => (
