@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
+body {
+  background: rgb(246, 104, 208);
+  background: linear-gradient(
+    45deg,
+    rgba(246, 104, 208, 0.2780462526807598) 37%,
+    rgba(153, 218, 223, 0.3648809865743172) 58%,
+    rgba(109, 252, 252, 0.4629202022605917) 100%
+  );
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+table {
+  background-color: transparent;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ml-70 {
+  margin-left: 70px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+span {
+  cursor: pointer;
+}
+.sort-selected::after {
+  content: "\f00c";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  margin: 0px 0px 0px 10x;
+  display: inline-block;
+}
+.contain-span {
+  position: relative;
+}
+.pos-span {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.none {
+  display: none;
+}
+.mh-500 {
+  padding: 10px 12px;
+  min-height: 650px;
+  background: rgb(63, 94, 251);
+  background: linear-gradient(45deg, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+  border-radius: 20px;
+  padding: 70px 20px;
+  margin-left: 20px;
+  position: relative;
+}
+.mh-500 .icon {
+  color: #cc0000;
+  font-size: 32px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+.mh-500 .icon:hover {
+  transform: scale(1.5);
+}
+.done-header {
+  font-size: 30px;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.btn-open {
+  border-radius: 30px;
+  background: rgb(19, 162, 230);
+  background: linear-gradient(
+    90deg,
+    rgba(19, 162, 230, 0.7458333675266982) 0%,
+    rgba(0, 255, 200, 0.7234244039412641) 100%
+  );
+  color: white;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-finished {
+  border-radius: 30px;
+  background: rgb(230, 19, 211);
+  background: linear-gradient(
+    90deg,
+    rgba(230, 19, 211, 0.8354692218684349) 0%,
+    rgba(255, 183, 0, 0.7234244039412641) 100%
+  );
+  color: white;
+}
+.bg-warning {
+  background: rgb(230, 124, 19);
+  background: linear-gradient(
+    90deg,
+    rgba(230, 124, 19, 0.7458333675266982) 0%,
+    rgba(255, 252, 0, 0.785049053801208) 100%
+  );
+  color: white;
+}
+.btn-warning {
+  background: rgb(230, 124, 19);
+  background: linear-gradient(
+    90deg,
+    rgba(230, 124, 19, 0.7458333675266982) 0%,
+    rgba(255, 252, 0, 0.785049053801208) 100%
+  );
+}
+.btn-danger {
+  background: rgb(230, 19, 19);
+  background: linear-gradient(
+    90deg,
+    rgba(230, 19, 19, 0.7458333675266982) 0%,
+    rgba(255, 97, 0, 0.785049053801208) 100%
+  );
+}
+.btn-sort {
+  background: rgb(19, 162, 230);
+  background: linear-gradient(
+    90deg,
+    rgba(19, 162, 230, 0.7458333675266982) 0%,
+    rgba(0, 255, 200, 0.7234244039412641) 100%
+  );
+  color: white;
+}
+.btn-search {
+  background: rgb(19, 162, 230);
+  background: linear-gradient(
+    90deg,
+    rgba(19, 162, 230, 0.7458333675266982) 0%,
+    rgba(0, 255, 200, 0.7234244039412641) 100%
+  );
+  color: white;
 }
