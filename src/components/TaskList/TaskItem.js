@@ -6,11 +6,13 @@ export const TaskItem = ({
   title,
   content,
   onDeleteTodo,
-  findIndex,
+  onEditTodo,
   setIsAddNew,
+  onEdit
 }) => {
   const handleEditTodo = (id) => {
-    findIndex(id);
+    // onEdit();
+    onEditTodo(id);
     setIsAddNew(false);
   };
 
@@ -29,26 +31,15 @@ const Wrapper = styled.div`
 
 export const Button = styled.button`
   cursor: pointer;
-  width: 100px;
-  height: 30px;
-  background: blue;
-  border: 1px solid black;
-  border-radius: 10px;
 `;
 
 const DeleteButton = styled(Button)`
-  width: 100px;
-  height: 30px;
   background: red;
-  border: 1px solid black;
-  border-radius: 10px;
+  border: 1px solid red;
 `;
 
 const EditButton = styled(Button)`
-  width: 100px;
-  height: 30px;
   background: yellow;
-  border: 1px solid black;
+  border: 1px solid yellow;
   margin-right: 10px;
-  border-radius: 10px;
 `;

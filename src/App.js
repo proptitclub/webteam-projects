@@ -7,7 +7,6 @@ function App() {
   return (
     <div className="App">
       <Title>Todo List</Title>
-      theanh
       <TaskList />
     </div>
   );
